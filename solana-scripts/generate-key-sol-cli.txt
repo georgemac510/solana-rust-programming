@@ -1,0 +1,18 @@
+Generate new key pair:
+
+solana-keygen new --outfile ~/.config/solana/tutor-key.json
+
+Verify keypair:
+
+solana-keygen pubkey ~/.config/solana/tutor-key.json
+
+Set to devnet:
+
+solana config set --url https://api.devnet.solana.com
+
+
+Set default wallet:
+
+solana config set --keypair ~/.config/solana/tutor-key.json
+
+
