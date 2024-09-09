@@ -5,7 +5,7 @@ resolution = true
 skip-lint = false
 
 [programs.devnet]
-anchor_counter = "nEsY41B5WyajSSrNFrnPxySXsXUJtuPJRe1RzHT89Vo"
+anchor_counter = "CGKJFa9LFJWJ7vbkfEkcuyzssMMK77XanLE5QNKThcfQ"
 
 [registry]
 url = "https://api.apr.dev"
