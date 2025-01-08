@@ -9,18 +9,21 @@ pub use constants::*;
 pub use instructions::*;
 pub use state::*;
 
-declare_id!("7LrTs649PzzDqnuG997XZn3vHPtJSsu6SswZ2xjNS85W");
+declare_id!("DAehvmx2vZoWCJi7Qo3Y4YF5vrEWHQRJ288kqKwDy5DV");
 
 #[program]
-pub mod solana_swap {
-    use instruction::MakeOffer;
-
+pub mod swap {
     use super::*;
 
-    pub fn make_offer(ctx: Context<MakeOffer>) -> Result<()> {
-        
-        instructions::make_offer::send_offered_tokens_to_vault
-        ()?;
-        instructions::make_offer::save_offer();
+    pub fn make_offer(
+        context: Context<MakeOffer>,
+        id: u64,
+        token_a_offered_amount: u64,
+        token_b_wanted_amount: u64,
+    ) -> Result<()> {
+        instructions::make_offer::send_offered_tokens_to_vault(&context, token_a_offered_amount)?;
+        instructions::make_offer::save_offer(context, id, token_b_wanted_amount)
     }
 }
+
+
